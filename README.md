@@ -123,11 +123,19 @@ mkswap [/dev/sdax]
 mount [/dev/sdax] /mnt
 
 #create the boot and home directories inside root
+cd /mnt
 mkdir home
 mkdir boot
 
+#only to uefi
+mkdir /boot/efi
+
 #change [/dev/sdax] to boot partition name 
+#legacy
 mount ]/dev/sdax] /mnt/boot
+
+#efi
+mount ]/dev/sdax] /mnt/boot/efi
 
 #change [/dev/sdax] to home partition name 
 mount [/dev/sdax] /mnt/home
@@ -138,10 +146,53 @@ swapon [/dev/sdax]
 ```
 
 
-6. Install the base packages into /mnt (pacstrap /mnt base linux linux-firmware git vim intel-ucode (or amd-ucode))
-7. Generate the FSTAB file with genfstab -U /mnt >> /mnt/etc/FSTAB
-8. Chroot in with arch-chroot /mnt
-9. Download the git repository with git clone https://gitlab.com/eflinux/arch-basic
-10. cd arch-basic
-11. chmod +x install-uefi.sh
-12. run with ./install-uefi.sh
+6. Install the base packages into /mnt 
+
+```bash
+pacstrap /mnt base base-devel linux linux-firmware git nano intel-ucode (or amd-ucode))
+```
+
+7. Generate the FSTAB file with
+```bash
+# in /mnt, execute:
+genfstab -U -p /mnt >> /mnt/etc/fstab
+
+#confirm fstab is generated accordongly
+nano /mnt/etc/fstab
+```
+
+
+8. Chroot in with:
+```bash
+ arch-chroot /mnt
+ ```
+
+9. Download the git repository with 
+```bash
+git clone https://github.com/bruno-bert/arch.git
+
+```
+
+10. install basics
+
+```bash
+#cd into the cloned repo
+cd arch
+
+#provide access to execute the script
+#legacy
+chmod +x install-mbr.sh
+#uefi
+chmod +x install-uefi.sh
+
+
+#run the script
+#legacy
+./install-mbr.sh
+
+#uefi
+./install-uefi.sh
+
+``` 
+
+11. 
