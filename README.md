@@ -203,19 +203,14 @@ exit
 #reboot with command:
 reboot
 
-#fix keyboard
-loadkeys br-abnt2
-
-#once boot again, mount the partitions again (check step 5)
-#change the /dev/sdax to the name of your partitions
-mount /dev/sda1 /mnt
-mount /dev/sda2 /mnt/home
-swapon /dev/sda3
-
-
-#chroot again
-arch-chroot /mnt
 ``` 
+
+12. first login
+```bash
+perform the login with root user
+user: root
+password : password
+```
 
 12. install Graphical interface
 ```bash
