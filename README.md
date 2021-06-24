@@ -214,11 +214,13 @@ password : password
 
 12. install Graphical interface
 ```bash
-#switch the user
-su bruno
+#check your internet conenction
+sudo systemctl status NetworkManager
 
-#cd into ~home
-cd ~
+#if active (in green), you are online
+#if not active, execute:
+sudo systemctl start NetworkManager
+
 
 #provide access to execute the script
 chmod +x ./arch/xfce.sh
