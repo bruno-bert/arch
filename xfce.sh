@@ -16,7 +16,7 @@ sudo timedatectl set-ntp true
 #paru -S --noconfirm auto-cpufreq
 #sudo systemctl enable --now auto-cpufreq
 
-sudo pacman -S --noconfirm xorg xfce4 xfce4-goodies firefox obs-studio vlc xorg-server xorg-xinit
+sudo pacman -S --noconfirm xorg xfce4 xfce4-goodies xorg-server xorg-xinit
 
 #if on virtual box
 #pacman -S virtualbox-guest-utils virtualbox-guest-modules-arch mesa mesa-libgl
