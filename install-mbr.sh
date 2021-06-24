@@ -37,7 +37,7 @@ systemctl enable fstrim.timer
 systemctl enable firewalld
 systemctl enable acpid
 
-useradd -m bruno
+id -u bruno &>/dev/null || useradd -m bruno
 echo bruno:password | chpasswd
 usermod -aG wheel bruno
 

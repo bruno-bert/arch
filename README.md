@@ -123,7 +123,7 @@ mkswap [/dev/sdax]
 mount [/dev/sdax] /mnt
 
 #create the boot and home directories inside root
-cd /mnt
+cd /mnt 
 mkdir home
 mkdir boot
 
@@ -132,7 +132,7 @@ mkdir /boot/efi
 
 #change [/dev/sdax] to boot partition name 
 #legacy
-mount ]/dev/sdax] /mnt/boot
+mount [/dev/sdax] /mnt/boot
 
 #efi
 mount ]/dev/sdax] /mnt/boot/efi
@@ -195,7 +195,24 @@ chmod +x install-uefi.sh
 
 ``` 
 
-11. install Graphical interface
+11. reboot
+```bash
+#leave the chroot
+exit
+
+#reboot with command:
+reboot
+
+#once boot again, mount the partitions again (check step 5)
+
+#fix keyboard
+loadkeys br-abnt2
+
+#chroot again
+arch-chroot /mnt
+``` 
+
+12. install Graphical interface
 ```bash
 #cd into the cloned repo (if not inside already)
 cd arch
