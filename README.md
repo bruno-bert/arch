@@ -40,20 +40,104 @@ station list [wlanid] connect ["network_name"]
 # Ctrl + C to leave the iwctl command prompt
 ```
 
+1. Refresh the servers with 
+```bash
+pacman -Syy -y
+```
 
+2. load keyboard
+```bash
+#change br-abnt2 to your keboard layout
+loadkeys [br-abnt2]
 
-1. If needed, load your keymap
+#you can try some and test to see if it works
+#examples
+loadkeys us-acentos
+loadkeys us
+```
+
+2. create and label the disk
 
 ```bash
+# list disks
+fdisk -l 
 
+#replace by your disk path
+fdisk [/dev/sda]
+
+#press m for help
+m
+
+#create a new label
+#press "o" for legacy (create a new empty DOS partition table)
+#press "g" for UEFI (create a new empty GPT partition table)
+#in our case, it will be legacy
+o
+
+#press w to save the change
+w
+```
+
+
+
+3. Partition the disk
+```bash
+
+#use cfdisk to create the partitions
+cfdisk /dev/sda
+
+#create a boot partition (only applicable to UEFI) (need to change type to Linux Boot)
+#create the / (root)  in a separated partition (can be 50G)
+#create the /home partition (let 2G to the swap partition)
+#create the swap partition (need to change type to Linux Swap)
+
+#remember to write changes to all partitions
+w and then "yes"
+```
+
+
+4. Format the partitions
+
+```bash
+#confirm the partitions names
+fdisk -l /dev/sda
+
+#format boot partition (only to UEFI)
+# change /dev/sdax to the name of yout boot partition (listed in previous command)
+mkfs.fat -F32 [/dev/sdax]
+
+#format / (root) partition (change [/dev/sdax] to the name of your root partition) (usually in linux, use ext4 type)
+mkfs.ext4 [/dev/sdax]
+
+#format /home partition (change [/dev/sdax] to the name of your home partition) (usually in linux, use ext4 type)
+mkfs.ext4 [/dev/sdax]
+
+#format swap partition (change [/dev/sdax] to the name of your swap partition) (usually in linux, use ext4 type)
+mkswap [/dev/sdax]
+```
+
+5. Mount the partitions
+```bash
+
+#change [/dev/sdax] to root (/) partition name 
+mount [/dev/sdax] /mnt
+
+#create the boot and home directories inside root
+mkdir home
+mkdir boot
+
+#change [/dev/sdax] to boot partition name 
+mount ]/dev/sdax] /mnt/boot
+
+#change [/dev/sdax] to home partition name 
+mount [/dev/sdax] /mnt/home
+
+#change [/dev/sdax] to swap partition name 
+swapon [/dev/sdax]
 
 ```
 
 
-2. Refresh the servers with pacman -Syy
-3. Partition the disk
-4. Format the partitions
-5. Mount the partitions
 6. Install the base packages into /mnt (pacstrap /mnt base linux linux-firmware git vim intel-ucode (or amd-ucode))
 7. Generate the FSTAB file with genfstab -U /mnt >> /mnt/etc/FSTAB
 8. Chroot in with arch-chroot /mnt
