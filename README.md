@@ -195,4 +195,16 @@ chmod +x install-uefi.sh
 
 ``` 
 
-11. 
+11. install Graphical interface
+```bash
+#cd into the cloned repo (if not inside already)
+cd arch
+
+#provide access to execute the script
+chmod +x xfce.sh
+
+#run the script
+./xfce.sh
+
+``` 
+
