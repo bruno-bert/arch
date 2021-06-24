@@ -212,7 +212,7 @@ user: root
 password : password
 ```
 
-12. install Graphical interface
+13. install Graphical interface
 ```bash
 #check your internet conenction
 sudo systemctl status NetworkManager
@@ -228,5 +228,13 @@ chmod +x /arch/xfce.sh
 #run the script
 /arch/xfce.sh
 
+#reboot again
+reboot
 ``` 
 
+14. loading graphical interface
+```
+#login again
+
+#start the graphical interface with startxfce4
+```
