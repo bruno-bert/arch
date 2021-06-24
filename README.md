@@ -223,10 +223,10 @@ sudo systemctl start NetworkManager
 
 
 #provide access to execute the script
-chmod +x ./arch/xfce.sh
+chmod +x /arch/xfce.sh
 
 #run the script
-./arch/xfce.sh
+/arch/xfce.sh
 
 ``` 
 
