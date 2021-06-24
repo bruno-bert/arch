@@ -200,10 +200,15 @@ exit
 #reboot with command:
 reboot
 
-#once boot again, mount the partitions again (check step 5)
-
 #fix keyboard
 loadkeys br-abnt2
+
+#once boot again, mount the partitions again (check step 5)
+#change the /dev/sdax to the name of your partitions
+mount /dev/sda1 /mnt
+mount /dev/sda2 /mnt/home
+swapon /dev/sda3
+
 
 #chroot again
 arch-chroot /mnt
