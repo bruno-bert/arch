@@ -214,14 +214,17 @@ arch-chroot /mnt
 
 12. install Graphical interface
 ```bash
-#cd into the cloned repo (if not inside already)
-cd arch
+#switch the user
+su bruno
+
+#cd into ~home
+cd ~
 
 #provide access to execute the script
-chmod +x xfce.sh
+chmod +x ./arch/xfce.sh
 
 #run the script
-./xfce.sh
+./arch/xfce.sh
 
 ``` 
 

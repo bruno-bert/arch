@@ -8,7 +8,6 @@ sudo timedatectl set-ntp true
 #sudo firewall-cmd --add-port=1025-65535/udp --permanent
 #sudo firewall-cmd --reload
 
-#switch the user
 
 git clone https://aur.archlinux.org/paru.git
 cd paru/
