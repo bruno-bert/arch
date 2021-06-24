@@ -9,12 +9,12 @@ sudo timedatectl set-ntp true
 #sudo firewall-cmd --reload
 
 
-git clone https://aur.archlinux.org/paru.git
-cd paru/
-makepkg -si --noconfirm
+#git clone https://aur.archlinux.org/paru.git
+#cd paru/
+#makepkg -si --noconfirm
 
-paru -S --noconfirm auto-cpufreq
-sudo systemctl enable --now auto-cpufreq
+#paru -S --noconfirm auto-cpufreq
+#sudo systemctl enable --now auto-cpufreq
 
 sudo pacman -S --noconfirm xorg xfce4 xfce4-goodies firefox obs-studio vlc xorg-server xorg-xinit
 
