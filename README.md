@@ -197,6 +197,9 @@ chmod +x ./arch/install-uefi.sh
 #leave the chroot
 exit
 
+
+#REMOVE YOUR BOOT MEDIA IN THIS MOMENT!!!!!
+
 #reboot with command:
 reboot
 
