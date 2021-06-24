@@ -176,22 +176,19 @@ git clone https://github.com/bruno-bert/arch.git
 10. install basics
 
 ```bash
-#cd into the cloned repo
-cd arch
-
 #provide access to execute the script
 #legacy
-chmod +x install-mbr.sh
+chmod +x ./arch/install-mbr.sh
 #uefi
-chmod +x install-uefi.sh
+chmod +x ./arch/install-uefi.sh
 
 
 #run the script
 #legacy
-./install-mbr.sh
+./arch/install-mbr.sh
 
 #uefi
-./install-uefi.sh
+./arch/install-uefi.sh
 
 ``` 
 
