@@ -243,7 +243,7 @@ chmod +x /arch/apps.sh
 su [USER]
 
 #execute script
-arch/apps.sh
+/arch/apps.sh
 ```
 
 18. Add dot files and Configure Look and Feel (themes, icons, etc...)
@@ -256,5 +256,18 @@ chmod +x /arch/config.sh
 su [USER]
 
 #execute script
-arch/config.sh
+/arch/config.sh
+```
+
+19. Install Development SDKs
+```
+su root
+#provide access to execute the script
+chmod +x /arch/asdf.sh
+
+#change [USER] to your username
+su [USER]
+
+#execute script
+/arch/asdf.sh
 ```
