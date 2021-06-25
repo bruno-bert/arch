@@ -2,22 +2,22 @@
 set -e
 
 /bin/echo -e "\e[1;32mCopying dot files..\e[0m"
-cp /dotfiles/*.* ~
+cp -a /arch/dotfiles/. ~/
 
 /bin/echo -e "\e[1;32mCopying themes..\e[0m"
-cp /.themes ~
+cp -a /arch/.themes ~/
 
 /bin/echo -e "\e[1;32mCopying icons..\e[0m"
-cp /.icons ~
+cp -a /arch/.icons ~/
 
 /bin/echo -e "\e[1;32mCopying local..\e[0m"
-cp /.local ~
+cp -a /arch/.local ~/
 
 /bin/echo -e "\e[1;32mCopying config..\e[0m"
-cp /.config ~
+cp -a /arch/.config ~/
 
 /bin/echo -e "\e[1;32mCopying backgrounds..\e[0m"
-cp /backgrounds/archlinux /usr/share/backgrounds~
+sudo cp -a /arch/backgrounds/archlinux /usr/share/backgrounds/
 
 
 /bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"
