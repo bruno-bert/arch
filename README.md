@@ -197,14 +197,15 @@ chmod +x ./arch/install-uefi.sh
 #leave the chroot
 exit
 
-
-#REMOVE YOUR BOOT MEDIA IN THIS MOMENT!!!!!
-
 #umount all partitions
 umount -a
 
-#reboot with command:
-reboot
+#shutdown with command:
+shutdown now
+
+#REMOVE YOUR BOOT MEDIA IN THIS MOMENT!!!!!
+
+#Restart your computer
 
 ``` 
 
