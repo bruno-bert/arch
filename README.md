@@ -200,6 +200,9 @@ exit
 
 #REMOVE YOUR BOOT MEDIA IN THIS MOMENT!!!!!
 
+#umount all partitions
+umount -a
+
 #reboot with command:
 reboot
 
