@@ -40,6 +40,10 @@ sudo systemctl enable --now auto-cpufreq
 # sudo systemctl start docker.service
 # sudo systemctl enable docker.service
 
+git config --global user.name "Bruno de Paula"
+git config --global user.email "bruno.bert.jj@gmail.com"
+
+
 
 /bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"
 sleep 5
