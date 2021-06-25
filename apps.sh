@@ -3,9 +3,18 @@ set -e
 
 #install paru AUR helper
 /bin/echo -e "\e[1;32mInstalling Paru AUR Helper...\e[0m"
-git clone https://aur.archlinux.org/paru.git
-cd paru/
-makepkg -si --noconfirm
+if ! command -v paru &> /dev/null then
+ rm -rf ~/tmp
+ mkdir ~/tmp
+ cd ~/tmp
+ git clone https://aur.archlinux.org/paru.git
+ cd paru/
+ makepkg -si --noconfirm
+ cd ~
+ rm -rf tmp
+else
+ /bin/echo -e "\e[1;32mParu AUR Helper is already installed...\e[0m"
+fi
 
 #install apps from AUR
 /bin/echo -e "\e[1;32mInstalling apps from AUR...\e[0m"
