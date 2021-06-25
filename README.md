@@ -175,8 +175,9 @@ git clone https://github.com/bruno-bert/arch.git
 #provide access to execute the scripts
 #legacy
 chmod +x ./arch/install-mbr.sh
-#uefi
+#OR uefi
 chmod +x ./arch/install-uefi.sh
+
 chmod +x ./arch/xfce.sh
 chmod +x ./arch/apps.sh
 chmod +x ./arch/config.sh
