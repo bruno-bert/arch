@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Panther launcher
+Comment=Launcher
+Exec=panther_launcher
+Icon=archlinux-logo
+Path=
+Terminal=false
+StartupNotify=true
