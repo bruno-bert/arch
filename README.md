@@ -236,9 +236,28 @@ chmod +x /arch/xfce.sh
 reboot
 ``` 
 
-14. loading graphical interface
+14. install apps
 ```
-#login again
+su root
+#provide access to execute the script
+chmod +x /arch/apps.sh
 
-#start the graphical interface with startxfce4
+#change [USER] to your username
+su [USER]
+
+#execute script
+arch/apps.sh
+```
+
+15. add dot files and config look and feel (themes, icons, etc...)
+```
+su root
+#provide access to execute the script
+chmod +x /arch/config.sh
+
+#change [USER] to your username
+su [USER]
+
+#execute script
+arch/config.sh
 ```
