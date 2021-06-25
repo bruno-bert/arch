@@ -2,7 +2,7 @@
 
 
 #install plugins
-/bin/echo -e "\e[1;32mInstalling ASDM Plugins...\e[0m"
+/bin/echo -e "\e[1;32mInstalling ASDF Plugins...\e[0m"
 asdf plugin-add nodejs
 asdf plugin-add python
 asdf plugin-add dotnet-core
