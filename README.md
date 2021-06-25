@@ -1,13 +1,9 @@
 # Arch Basic Install Commands-Script
 
 In this repository you will find packages-scripts for the base install of Arch Linux in Xfce desktop environments. 
-
-Modify the packages to your liking, make the script executable with chmod +x scriptname and then run with ./scriptname.
-
 Remember that the first part of the Arch Linux install is manual, that is you will have to partition, format, mount the disk and install the base packages.
 
-1. check your internet connection (YOU NEED THIS TO MOVE ON)
-
+1. Check your internet connection (YOU NEED THIS TO MOVE ON)
 **Note**: If you are connected to network though cable or using a virtual machine, you will be OK with internet connection by standard
 
 To confirm this:
