@@ -36,12 +36,12 @@ station list [wlanid] connect ["network_name"]
 # Ctrl + C to leave the iwctl command prompt
 ```
 
-1. Refresh the servers with 
+3. Refresh the packages
 ```bash
 pacman -Syy -y
 ```
 
-2. load keyboard
+4. load keyboard
 ```bash
 #change br-abnt2 to your keboard layout
 loadkeys [br-abnt2]
@@ -52,7 +52,7 @@ loadkeys us-acentos
 loadkeys us
 ```
 
-2. create and label the disk
+5. Create and label the disk
 
 ```bash
 # list disks
@@ -76,7 +76,7 @@ w
 
 
 
-3. Partition the disk
+6. Partition the disk
 ```bash
 
 #use cfdisk to create the partitions
@@ -92,7 +92,7 @@ w and then "yes"
 ```
 
 
-4. Format the partitions
+7. Format the partitions
 
 ```bash
 #confirm the partitions names
@@ -112,7 +112,7 @@ mkfs.ext4 [/dev/sdax]
 mkswap [/dev/sdax]
 ```
 
-5. Mount the partitions
+8. Mount the partitions
 ```bash
 
 #change [/dev/sdax] to root (/) partition name 
@@ -142,13 +142,13 @@ swapon [/dev/sdax]
 ```
 
 
-6. Install the base packages into /mnt 
+9. Install the base packages into /mnt 
 
 ```bash
 pacstrap /mnt base base-devel linux linux-firmware git nano intel-ucode (or amd-ucode))
 ```
 
-7. Generate the FSTAB file with
+10. Generate the FSTAB file with
 ```bash
 # in /mnt, execute:
 genfstab -U -p /mnt >> /mnt/etc/fstab
@@ -158,18 +158,18 @@ nano /mnt/etc/fstab
 ```
 
 
-8. Chroot in with:
+11. Chroot in with:
 ```bash
  arch-chroot /mnt
  ```
 
-9. Download the git repository with 
+12. Download the git repository with 
 ```bash
 git clone https://github.com/bruno-bert/arch.git
 
 ```
 
-10. install basics
+13. Install Basics
 
 ```bash
 #provide access to execute the script
@@ -188,7 +188,8 @@ chmod +x ./arch/install-uefi.sh
 
 ``` 
 
-11. reboot
+14. Shutdown and Remove Boot Media
+
 ```bash
 #leave the chroot
 exit
@@ -205,14 +206,14 @@ shutdown now
 
 ``` 
 
-12. first login
+15. First Login
 ```bash
 perform the login with root user
 user: root
 password : password
 ```
 
-13. install Graphical interface
+16. install Graphical interface
 ```bash
 #check your internet conenction
 sudo systemctl status NetworkManager
@@ -232,7 +233,7 @@ chmod +x /arch/xfce.sh
 reboot
 ``` 
 
-14. install apps
+17. Install Apps
 ```
 su root
 #provide access to execute the script
@@ -245,7 +246,7 @@ su [USER]
 arch/apps.sh
 ```
 
-15. add dot files and config look and feel (themes, icons, etc...)
+18. Add dot files and Configure Look and Feel (themes, icons, etc...)
 ```
 su root
 #provide access to execute the script
