@@ -172,12 +172,15 @@ git clone https://github.com/bruno-bert/arch.git
 13. Install Basics
 
 ```bash
-#provide access to execute the script
+#provide access to execute the scripts
 #legacy
 chmod +x ./arch/install-mbr.sh
 #uefi
 chmod +x ./arch/install-uefi.sh
-
+chmod +x ./arch/xfce.sh
+chmod +x ./arch/apps.sh
+chmod +x ./arch/config.sh
+chmod +x ./arch/asdf.sh
 
 #run the script
 #legacy
@@ -222,10 +225,6 @@ sudo systemctl status NetworkManager
 #if not active, execute:
 sudo systemctl start NetworkManager
 
-
-#provide access to execute the script
-chmod +x /arch/xfce.sh
-
 #run the script
 /arch/xfce.sh
 
@@ -235,10 +234,6 @@ reboot
 
 17. Install Apps
 ```
-su root
-#provide access to execute the script
-chmod +x /arch/apps.sh
-
 #change [USER] to your username
 su [USER]
 
@@ -248,10 +243,6 @@ su [USER]
 
 18. Add dot files and Configure Look and Feel (themes, icons, etc...)
 ```
-su root
-#provide access to execute the script
-chmod +x /arch/config.sh
-
 #change [USER] to your username
 su [USER]
 
@@ -261,10 +252,6 @@ su [USER]
 
 19. Install Development SDKs
 ```
-su root
-#provide access to execute the script
-chmod +x /arch/asdf.sh
-
 #change [USER] to your username
 su [USER]
 
