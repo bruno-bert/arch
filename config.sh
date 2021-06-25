@@ -16,6 +16,9 @@ cp /.local ~
 /bin/echo -e "\e[1;32mCopying config..\e[0m"
 cp /.config ~
 
+/bin/echo -e "\e[1;32mCopying backgrounds..\e[0m"
+cp /backgrounds/archlinux /usr/share/backgrounds~
+
 
 /bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"
 sleep 5
