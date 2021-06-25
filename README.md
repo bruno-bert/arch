@@ -87,8 +87,8 @@ cfdisk /dev/sda
 #create the /home partition (let 2G to the swap partition)
 #create the swap partition (need to change type to Linux Swap)
 
-#remember to write changes to all partitions
-w and then "yes"
+#remember to write changes (repeat to all partitions)
+Select the option "Write". press Enter and type "yes", Enter Again
 ```
 
 
