@@ -1,6 +1,18 @@
 #!/bin/bash
 set -e
 
+/bin/echo -e "\e[1;32mType your git name:\e[0m"
+read gitname
+git config --global user.name "$gitname"
+
+/bin/echo -e "\e[1;32mType your git mail:\e[0m"
+read gitmail
+git config --global user.email "$gitmail"
+
+git config --global core.editor "nano"
+
+
+
 #install paru AUR helper
 
 if ! command -v paru &> /dev/null 
