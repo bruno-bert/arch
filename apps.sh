@@ -75,16 +75,10 @@ fi
 sudo systemctl enable --now auto-cpufreq
 # sudo systemctl start docker.service
 # sudo systemctl enable docker.service
+# sudo systemctl start mongodb
+# sudo systemctl enable mongodb
 
-/bin/echo -e "\e[1;32mType your git name:\e[0m"
-read gitname
-git config --global user.name "$gitname"
 
-/bin/echo -e "\e[1;32mType your git mail:\e[0m"
-read gitmail
-git config --global user.email "$gitmail"
-
-git config --global core.editor "nano"
 
 
 /bin/echo -e "\e[1;32mApps Installation Completed..\e[0m"
