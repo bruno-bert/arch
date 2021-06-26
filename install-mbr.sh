@@ -17,7 +17,13 @@ echo "127.0.1.1 archdev.localdomain archdev" >> /etc/hosts
 
 echo -e "Type your root password"
 read rootpassword
-echo root:$rootpasswordd | chpasswd
+echo root:$rootpassword | chpasswd
+
+echo -e "Type your username:"
+read username
+
+echo -e "Type your password:"
+read userpassword
 
 # You can add xorg to the installation packages, I usually add it at the DE or WM install script
 # You can remove the tlp package if you are installing on a desktop or vm
@@ -41,15 +47,12 @@ systemctl enable fstrim.timer
 systemctl enable firewalld
 systemctl enable acpid
 
-echo -e "Type your username:"
-read username
+
 id -u $username &>/dev/null || useradd -m $username
-echo -e "Type your password:"
-read userpassword
 echo $username:$userpassword | chpasswd
 usermod -aG wheel $username
 
 echo "$username ALL=(ALL) ALL" >> /etc/sudoers.d/$username
 
 
-printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
+printf "\e[1;32mDone! Type exit, umount -a and shutdown now.\e[0m"
