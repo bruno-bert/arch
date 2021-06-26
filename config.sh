@@ -20,6 +20,6 @@ cp -a /arch/.config ~/
 sudo cp -a /arch/backgrounds/archlinux /usr/share/backgrounds/
 
 
-/bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"
-sleep 5
-sudo reboot
+/bin/echo -e "\e[1;32mThemming Completed..\e[0m"
+#sleep 5
+#sudo reboot

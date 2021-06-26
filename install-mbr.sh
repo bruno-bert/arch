@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
 #sed -i '393s/.//' /etc/locale.gen
@@ -13,7 +14,10 @@ echo "archdev" > /etc/hostname
 echo "127.0.0.1 localhost" > /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 archdev.localdomain archdev" >> /etc/hosts
-echo root:password | chpasswd
+
+echo -e "Type your root password"
+read rootpassword
+echo root:$rootpasswordd | chpasswd
 
 # You can add xorg to the installation packages, I usually add it at the DE or WM install script
 # You can remove the tlp package if you are installing on a desktop or vm
@@ -37,15 +41,15 @@ systemctl enable fstrim.timer
 systemctl enable firewalld
 systemctl enable acpid
 
-id -u bruno &>/dev/null || useradd -m bruno
-echo bruno:password | chpasswd
-usermod -aG wheel bruno
+echo -e "Type your username:"
+read username
+id -u $username &>/dev/null || useradd -m $username
+echo -e "Type your password:"
+read userpassword
+echo $username:$userpassword | chpasswd
+usermod -aG wheel $username
 
-echo "bruno ALL=(ALL) ALL" >> /etc/sudoers.d/bruno
+echo "$username ALL=(ALL) ALL" >> /etc/sudoers.d/$username
 
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
-
-
-
-

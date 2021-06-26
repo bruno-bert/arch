@@ -23,6 +23,6 @@ asdf global python 3.7.4
 asdf global dotnet-core 3.1.410
 
 
-/bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"
-sleep 5
-sudo reboot
+/bin/echo -e "\e[1;32mSDKs Installation Completed..\e[0m"
+#sleep 5
+#sudo reboot

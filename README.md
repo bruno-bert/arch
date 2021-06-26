@@ -153,7 +153,7 @@ pacstrap /mnt base base-devel linux linux-firmware git nano intel-ucode (or amd-
 # in /mnt, execute:
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
-#confirm fstab is generated accordongly
+#confirm fstab is generated accordingly (optional step)
 nano /mnt/etc/fstab
 ```
 
@@ -184,6 +184,8 @@ chmod +x ./arch/config.sh
 chmod +x ./arch/asdf.sh
 
 #run the script
+#once you run this script you will need to type
+#a root password, a username and a user password
 #legacy
 ./arch/install-mbr.sh
 
@@ -214,7 +216,7 @@ shutdown now
 ```bash
 perform the login with root user
 user: root
-password : password
+password : [yout_root_password]
 ```
 
 16. install Graphical interface
@@ -229,33 +231,33 @@ sudo systemctl start NetworkManager
 #run the script
 /arch/xfce.sh
 
-#reboot again
+#reboot
 reboot
+
+#login as the regular user
 ``` 
 
 17. Install Apps
 ```
-#change [USER] to your username
-su [USER]
-
 #execute script
 /arch/apps.sh
 ```
 
 18. Add dot files and Configure Look and Feel (themes, icons, etc...)
 ```
-#change [USER] to your username
-su [USER]
-
 #execute script
 /arch/config.sh
 ```
 
 19. Install Development SDKs
 ```
-#change [USER] to your username
-su [USER]
-
 #execute script
 /arch/asdf.sh
 ```
+
+20. Reboot the system
+```
+reboot
+
+#once you are back, login as your regular username (not the root)
+`` 
