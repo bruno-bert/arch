@@ -224,6 +224,14 @@ password : [yout_root_password]
 #check your internet conenction
 sudo systemctl status NetworkManager
 
+ping google.com
+
+#sometimes when using wifi connection, 
+even with NetworkNamager indicator as active, internet keeps unavailable
+# if that is the case, use the utility nmtui to select a wifi connection
+
+nmtui
+
 #if active (in green), you are online
 #if not active, execute:
 sudo systemctl start NetworkManager
