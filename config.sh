@@ -21,6 +21,7 @@ sudo cp -a /arch/backgrounds/archlinux /usr/share/backgrounds/
 
 #/bin/echo -e "\e[1;32mCopying firefox bookmarks..\e[0m"
 #sudo cp -a /arch/places.sqlite ~/.mozilla/firefox/*default-release/
+#sudo cp -a /arch/favicons.sqlite ~/.mozilla/firefox/*default-release/
 
 
 /bin/echo -e "\e[1;32mThemming Completed..\e[0m"
